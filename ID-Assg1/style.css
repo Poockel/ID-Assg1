@@ -390,7 +390,7 @@ section::before {
 .homelogo {
   width: 60%;
   object-fit: cover;
-  z-index: 2;
+  z-index: 2
 }
 
 .home {
@@ -411,7 +411,7 @@ section::before {
   background: #ffce78;
   color: black;
   font-size: 1.5em;
-  z-index: 9;
+  z-index: 999;
   transform: translateY(100px);
 }
 
@@ -431,6 +431,18 @@ section::before {
   align-items: center;
 }
 
+#d {
+  color: #f8561f;
+}
+
+#r {
+  color: #147049;
+}
+
+#z {
+  color: #e8233a;
+}
+
 .benefits > p {
   margin: 5px;
 }
@@ -444,14 +456,16 @@ section::before {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 .componentimg {
   width: 20vw;
   height: 20vw;
+  z-index: 99;
 }
 
-.hidden {
+.appear {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
@@ -483,7 +497,66 @@ section::before {
 }
 
 .componentstitle {
-  justify-self: center;
-  align-self: center;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
+
+.componenttitle {
+  position: relative;
+  font-weight: 500;
+  font-size: 4vw;
+  width: 20vw;
+  text-align: center;
+  top: -5vw;
+}
+
+#energy {
+  color: #ff6f00;
+}
+
+#mood {
+  color: #ff2c00;
+  transition-delay: 200ms;
+}
+
+#focus {
+  color: #079c85;
+  transition-delay: 350ms;
+}
+
+#immunity {
+  color:  #ff6f00;
+  transition-delay: 500ms;
+}
+
+.hide {
+  position: absolute;
+  height: 11vw;
+  width: 20vw;
+  background-color: blue;
+  z-index: -1;
+}
+
+.componentssource {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.componentsource {
+  position: relative;
+  font-size: 2vw;
+  width: 20vw;
+  text-align: center;
+  /*z-index: -2;*/
+}
+
+#energysource {
+  top: -12vw;
+}
+
+
+
