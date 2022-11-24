@@ -407,11 +407,17 @@ section::before {
   display: inline-block;
   padding: 8px 30px;
   border-radius: 40px;
+  border: 3px solid #ffce78;
   background: #ffce78;
   color: black;
   font-size: 1.5em;
   z-index: 9;
   transform: translateY(100px);
+}
+
+#btn:hover {
+  border: 3px solid #ffce78;
+  background: #f6f5ec;
 }
 
 .benefits {
@@ -432,11 +438,52 @@ section::before {
 .components {
   width: 100vw;
   height: 100vh;
-  display: grid;
 }
 
 .componentsimg {
-  height: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.componentimg {
   width: 20vw;
-  border-radius: 50%;
+  height: 20vw;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 0.8s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+#moodimg {
+  transition-delay: 200ms;
+}
+
+#focusimg {
+  transition-delay: 400ms;
+}
+
+#immunityimg {
+  transition-delay: 600ms;
+}
+
+.componentstitle {
+  justify-self: center;
+  align-self: center;
+
 }
