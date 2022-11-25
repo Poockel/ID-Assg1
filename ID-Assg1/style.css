@@ -360,16 +360,16 @@ body {
   font-style: normal;
 }
 
-section {
+.section {
   position: relative;
   width: 100vw;
-  height: 110vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-section::before {
+.section::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -396,7 +396,7 @@ section::before {
 .home {
   position: relative;
   width: 100vw;
-  height: 110vh;
+  height: 100vh;
   object-fit: cover;
   z-index: 1;
 }
@@ -448,21 +448,12 @@ section::before {
 }
 
 .components {
+  position: relative;
   width: 100vw;
   height: 100vh;
-}
-
-.componentsimg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.componentimg {
-  width: 20vw;
-  height: 20vw;
-  z-index: 99;
+  display: grid;
+  grid-template-columns: auto 20vw 20vw 20vw 20vw auto;
+  grid-template-rows: auto 20vw 6vw auto auto;
 }
 
 .appear {
@@ -484,78 +475,205 @@ section::before {
   }
 }
 
+#energyimg {
+  grid-area: 2 / 2 / 3 / 3;
+  width: 20vw;
+  height: 20vw;
+}
+
 #moodimg {
+  grid-area: 2 / 3 / 3 / 4;
+  width: 20vw;
+  height: 20vw;
   transition-delay: 200ms;
 }
 
 #focusimg {
+  grid-area: 2 / 4 / 3 / 5;
+  width: 20vw;
+  height: 20vw;
   transition-delay: 400ms;
 }
 
 #immunityimg {
+  grid-area: 2 / 5 / 3 / 6;
+  width: 20vw;
+  height: 20vw;
   transition-delay: 600ms;
 }
 
-.componentstitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
 .componenttitle {
-  position: relative;
+  position: absolute;
+  font-size: 4.4vw;
   font-weight: 500;
-  font-size: 4vw;
-  width: 20vw;
   text-align: center;
-  top: -5vw;
+  width: 20vw;
+  height: 6vw;
+  display: flex;
+  flex-direction: column;
+  z-index: 23;
 }
 
 #energy {
+  grid-area: 3 / 2 / 4 / 3;
   color: #ff6f00;
 }
 
+#energy > p {
+  position: relative;
+  top: -4vw;
+}
+
 #mood {
+  grid-area: 3 / 3 / 4 / 4;
   color: #ff2c00;
   transition-delay: 200ms;
 }
 
+#mood > p {
+  position: relative;
+  top: -4vw;
+}
+
 #focus {
+  grid-area: 3 / 4 / 4 / 5;
   color: #079c85;
   transition-delay: 350ms;
 }
 
+#focus > p {
+  position: relative;
+  top: -4vw;
+}
+
 #immunity {
+  grid-area: 3 / 5 / 4 / 6;
   color:  #ff6f00;
   transition-delay: 500ms;
 }
 
-.hide {
-  position: absolute;
-  height: 11vw;
-  width: 20vw;
-  background-color: blue;
-  z-index: -1;
-}
-
-.componentssource {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+#immunity > p {
+  position: relative;
+  top: -4vw;
 }
 
 .componentsource {
   position: relative;
+  background-color: rgba(0,0,0,0);
   font-size: 2vw;
+  height: 20vw;
   width: 20vw;
+  display: flex;
+  z-index: 21;
+}
+
+.spansource {
+  position: absolute;
+  width: 20vw;
+  height: 5vw;
   text-align: center;
-  /*z-index: -2;*/
+  top: 21vw;
+  transition: all 0.4s; /* vendorless fallback */
+  -o-transition: all 0.4s; /* opera */
+  -ms-transition: all 0.4s; /* IE 10 */
+  -moz-transition: all 0.4s; /* Firefox */
+  -webkit-transition: all 0.4s; /*safari and chrome */
 }
 
 #energysource {
-  top: -12vw;
+  grid-area: 2 / 2 / 5 / 3;
+}
+
+#energysource:hover span {
+  top: 26vw;
+  -webkit-transition: all 0.4s; 
+  -moz-transition: all 0.4s; 
+  transition: all 0.4s;
+}
+
+#moodsource {
+  grid-area: 2 / 3 / 5 / 4;
+}
+
+#moodsource:hover span {
+  top: 26vw;
+  -webkit-transition: all 0.4s; 
+  -moz-transition: all 0.4s; 
+  transition: all 0.4s;
+}
+
+#focussource {
+  grid-area: 2 / 4 / 5 / 5;
+}
+
+#focussource:hover span {
+  top: 26vw;
+  -webkit-transition: all 0.4s; 
+  -moz-transition: all 0.4s; 
+  transition: all 0.4s;
+}
+
+#immunitysource {
+  grid-area: 2 / 5 / 5 / 6;
+}
+
+#immunitysource:hover span {
+  top: 26vw;
+  -webkit-transition: all 0.4s; 
+  -moz-transition: all 0.4s; 
+  transition: all 0.4s;
+}
+
+.hidden {
+  background-color: #f6f5ec;
+  position: relative;
+  height: 6vw;
+  width: 20vw;
+  z-index: 22;
+}
+
+#hideenergy {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+#hidemood {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+#hidefocus {
+  grid-area: 3 / 4 / 4 / 5;
+}
+
+#hideimmunity {
+  grid-area: 3 / 5 / 4 / 6;
+}
+
+.lastpage {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type = "email"] {
+  font-size: 1.5vw;
+  border-radius: 50px;
+  border: 2px solid rgba(206,206,206);
+  height: 50px;
+  width: 700px;
+  padding-left: 20px;
+}
+
+input[type = "image"] {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  opacity: 0.25;
+  left: 330px;
+  bottom: 43px;
+  border-radius: 30px;
 }
 
 
