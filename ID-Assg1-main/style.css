@@ -344,6 +344,10 @@ template {
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100vh;
   width: 100vw;
@@ -356,38 +360,21 @@ body {
   font-weight: 600;
   font-style: normal;
 }
-/*
-main {
-  background-image: url("images/home.jpg");
-  background-position: center 0%;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-  z-index: 2;
-  transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
-}
-*/
 
 main {
   background-color: #f6f5ec;
-  background-position: center 0%;
-  background-size: cover;
-  width: 100vw;
-  position: relative;
   z-index: 2;
   transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
 }
 
 .home {
   position: relative;
-  aspect-ratio: 16 / 8.28;
   object-fit: cover;
   top: 0;
   width: 100vw;
 }
 
-
+/*
 body[data-nav="true"] > main {
   transform: translateY(-50%);
 }
@@ -487,3 +474,5 @@ body[data-nav="true"] > #nav-toggle > .close {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
+*/
+
