@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="https://use.typekit.net/req6tox.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body data-nav="false" class="y mandatory-scroll-snapping">
-    <div class="container">
-      <div class="section">
+  <body data-nav="false">    
+    <main>
+      <!--
+      <section class="homepage">
         <div class="logo">
           <img class="homelogo" src="images/juvee_logo.png" />
         </div>
@@ -23,15 +24,13 @@
           <img class="home" src="images/home.jpg" />
         </div>
         <a class="roc-grotesk-font" href="#benefits" id="btn">Explore</a>
-      </div>
-
-      <div class="benefits roc-grotesk-font" id="benefits">
+      </section>
+      <section class="benefits roc-grotesk-font" id="benefits">
         <p class="appear" id="d">Delicious.</p>
         <p class="appear" id="r">Refreshing.</p>
         <p class="appear" id="z">Zero Trade-Offs.</p>
-      </div>
-
-      <div class="components roc-grotesk-font">
+      </section>
+      <section class="components roc-grotesk-font">
         <img class="appear" id="energyimg" src="images/energy.png" />
         <img class="appear" id="moodimg" src="images/mood.png" />
         <img class="appear" id="focusimg" src="images/focus.png" />
@@ -67,15 +66,48 @@
         <div class="hidden" id="hidemood"></div>
         <div class="hidden" id="hidefocus"></div>
         <div class="hidden" id="hideimmunity"></div>
+      </section>
+      <section class = "lastpage roc-grotesk-font">
+        <div id = "text">
+          <p>JOIN JUVEE NATION</p>
+          <p>Be the first to hear about news, upcoming<br>releases and more</p>
+        </div>
+        <div id = "subscribe">
+          <input type = "email" id="email" name="email" placeholder="Your Email">
+          <input type = "image" src = "images/submitbutton.png" id = "submit" alt = "submit">
+        </div>
+        <div id = "socials">
+          <input type = "image" src = "images/instagram_logo.png" class = "social"/>
+          <input type = "image" src = "images/tiktok_logo.png" class = "social"/>
+          <input type = "image" src = "images/twitter_logo.png" class = "social"/>
+        </div>
+      </section>
+    -->
+    </main>
+    <nav id="nav">
+      <div id="nav-links">
+        <a class="nav-link" href="#">
+          <p class="nav-link-label roc-grotesk-font">Home</p>
+          <img class="nav-link-image" src="images/home.jpg" />
+        </a>
+        <a class="nav-link" href="#">
+          <p class="nav-link-label roc-grotesk-font">Shop</p>
+          <img class="nav-link-image" src="images/shop.jpg" />
+        </a>
+        <a class="nav-link" href="#">
+          <p class="nav-link-label roc-grotesk-font">About</p>
+          <img class="nav-link-image" src="images/about.jpg" />
+        </a>
+        <a class="nav-link" href="#">
+          <p class="nav-link-label roc-grotesk-font">Contact</p>
+          <img class="nav-link-image" src="images/contact.jpg" />
+        </a>
       </div>
-
-      <div class = "lastpage roc-grotesk-font">
-        <p>JOIN JUVEE NATION</p>
-        <p>Be the first to hear about news, upcoming<br>releases and more</p>
-        <input type="email" id="email" name="email" placeholder="Your Email">
-        <input type = "image" src = "images/submitbutton.png" alt = "submit">
-      </div>
-    </div>
+    </nav>
+    <button id="nav-toggle" type ="button" onclick="toggleNav()">
+      <i class="open fa-solid fa-bars-staggered"></i>
+      <i class="close fa-solid fa-xmark"></i>
+    </button>
     <script src="script.js"></script>
   </body>
 </html>
