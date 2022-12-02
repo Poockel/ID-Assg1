@@ -350,14 +350,12 @@ template {
 
 body {
   width: 100vw;
-  overflow-x: hidden;
+  height: 100vh;
   margin: 0px;
   background-color: #f6f5ec;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
-body::-webkit-scrollbar {
+main::-webkit-scrollbar {
   display: none;
 }
 
@@ -369,12 +367,15 @@ body::-webkit-scrollbar {
 main {
   width: 100vw;
   height: 100vh;
-  background-color: green;
+  display: flex;
+  flex-flow: column nowrap; 
+  overflow-x: hidden;
+  background-color: #f6f5ec;
   position: relative;
   transition: transform 500ms cubic-bezier(.13,.53,.38,.97);  
   z-index: 9999;
 }
-/*
+
 .homepage {
   width: 100vw;
   height: 100vh;
@@ -391,7 +392,7 @@ main {
   width: 100vw;
   height: 400px;
   background: linear-gradient(to top, #f6f5ec, transparent);
-  z-index: 8;
+  z-index: 9;
 }
 
 .logo {
@@ -436,9 +437,9 @@ main {
   background: #f6f5ec;
 }
 
-.benefits {
-  width: 100vw;
+.benefits > div{ 
   height: 100vh;
+  width: 100vw;
   font-weight: 500;
   font-size: 7vw;
   display: flex;
@@ -459,36 +460,17 @@ main {
   color: #e8233a;
 }
 
-.benefits > p {
+.benefits > div > p {
   margin: 5px;
 }
 
-.components {
+.components > div {
   position: relative;
   width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-columns: auto 20vw 20vw 20vw 20vw auto;
   grid-template-rows: auto 20vw 6vw auto auto;
-}
-
-.appear {
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateX(-100%);
-  transition: all 0.8s;
-}
-
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0);
-}
-
-@media(prefers-reduced-motion) {
-  .hidden {
-    transition: none;
-  }
 }
 
 #energyimg {
@@ -664,7 +646,7 @@ main {
   grid-area: 3 / 5 / 4 / 6;
 }
 
-.lastpage {
+.lastpage > div {
   height: 100vh;
   width: 100vw;
 }
@@ -677,14 +659,14 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 0;
-  top: 35vh;
+  margin: 0px;
+  top: 25vh;
 }
 
 #subscribe {
   position: relative;
   margin: 0;
-  top: 40vh;
+  top: 30vh;
   display: flex;
   justify-content: center;
 }
@@ -695,7 +677,7 @@ input[type = "email"] {
   border-radius: 50px;
   border: 2px solid rgba(206,206,206);
   height: 50px;
-  width: 60vw;
+  width: 700px;
   padding-left: 20px;
   left: 20px;
 }
@@ -708,7 +690,7 @@ input[id = "submit"] {
   bottom: 43px;
   border-radius: 30px;
   top: 0.2vh;
-  right: 1.8vw;
+  right: 40px;
   padding: 11px;  
 }
 
@@ -718,9 +700,14 @@ input[id = "submit"]:hover {
 
 #socials {
   position: relative;
-  width: 15vw;
-  top: 42vh;
-  left: 65vw;
+  width: 20vw;
+  left: 63vw;
+  top: 32vh;
+}
+
+#socials > div {
+  position: relative;
+  width: 200px;
   display: flex;
   justify-content: space-around;
 }
@@ -729,7 +716,7 @@ input[class = "social"] {
   height: 30px;
   width: 30px;
 }
-*/
+
 body[data-nav="true"] > main {
   transform: translateY(-50%);
 }
@@ -737,10 +724,10 @@ body[data-nav="true"] > main {
 nav {
   height: 50vh;
   width: 100vw;
+  background-color: #ffce78;
   position: absolute;
   left: 0px;
   bottom: 0px;
-  overflow: hidden;
 }
 
 #nav-links {  
@@ -764,6 +751,7 @@ body[data-nav="true"] > nav > #nav-links {
 #nav-links > .nav-link > .nav-link-label {
   color: black;
   font-size: 1.25rem;
+  font-weight: 500;;
   margin: 0rem;
   text-transform: uppercase;
 }
@@ -784,7 +772,7 @@ body[data-nav="true"] > nav > #nav-links {
   left: 50%;
   bottom: 3rem;
   transform: translateX(-50%);
-  background-color: rgb(182, 142, 113);
+  background-color: #ffce78;
   border: none;
   border-radius: 5rem;
   outline: none;
@@ -804,7 +792,7 @@ body[data-nav="true"] > nav > #nav-links {
 }
 
 body[data-nav="true"] > #nav-toggle {
-  background-color: rgb(85, 130, 149);
+  background-color: rgb(122, 255, 95);
 }
 
 body:not([data-nav="true"]) > #nav-toggle:hover > .open {
@@ -828,4 +816,23 @@ body:not([data-nav="true"]) > #nav-toggle:hover > .open {
 body[data-nav="true"] > #nav-toggle > .close {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
+}
+
+.appear {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 0.8s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
 }
