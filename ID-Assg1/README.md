@@ -40,4 +40,4 @@
 
 ### The nav bar is heavily inspired by https://www.buildinamsterdam.com
 
-### A lot of the code that I found that I made use of is found in youtube.
+### Some of the code that I found is from in youtube, mainly the css and javascript.
